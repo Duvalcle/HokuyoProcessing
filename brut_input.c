@@ -16,6 +16,7 @@ char hexDigit(unsigned n)
     }
 }
 
+//Conversion d'un caractère en hexadecimal
 void charToHex(char c, char hex[3])
 {
     hex[0] = hexDigit(c / 0x10);
