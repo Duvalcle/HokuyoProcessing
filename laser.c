@@ -1,5 +1,4 @@
 // Programme de lancement acquisition des points
-// Created on 24/03/2017 by C.Duval
 
 #include <stdio.h>
 #include <string.h>
@@ -13,9 +12,7 @@
 #include <termios.h>
 #include <unistd.h>
 
-/*#define 0_RDWR
-#define 0_NOCTTY
-#define 0_SYNC*/
+
 #define SIZE_BUF 2
 #if defined _BSD_SOURCE || defined _SVID_SOURCE
  #define __USE_MISC     1
@@ -48,8 +45,7 @@ int main(void){
   int distance;
   char side_play;
 
-//  printf("sélectionner le cote de jeu (B/J):\n");
-//  scanf("%c",&side_play);
+  // Ouverture liaison série
   fd = open(portname, O_RDWR | O_NOCTTY | O_SYNC);
   if (fd < 0) {
      printf("Error opening %s: %s\n", portname, strerror(errno));
